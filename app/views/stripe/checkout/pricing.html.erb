@@ -1,0 +1,9 @@
+<% @prices.each do |price| %>
+  <div>
+  <%= price.product.name%>
+  <%= price.unit_amount/100 %>
+  <%= price.currency %>
+  <%= price.recurring.interval %>
+  <%= button_to 'Subscribe', stripe_checkout_path(price_id: price.id), data: {turbo: 'false'} %>
+  </div>
+<% end %>
