@@ -4,7 +4,7 @@ class Stripe::WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create 
-    webhook_secret = 'whsec_830bd39c90f0547832a78c2e7532e0f5cc7518c32c4d106b3e9cda39965593b7'
+  webhook_secret = ''
     payload = request.body.read
     if !webhook_secret.empty?
       # Retrieve the event by verifying the signature using the raw body and secret if webhook signing is configured.
